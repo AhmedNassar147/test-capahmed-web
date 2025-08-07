@@ -22,11 +22,14 @@ export default function App() {
 
     console.log("reCAPTCHA token:", token);
 
-    const response = await fetch(`http://localhost:4000/verify-recaptcha`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token }),
-    });
+    const response = await fetch(
+      `https://recaptcha-end-2n80upg38-ahmed-nassars-projects-c686e733.vercel.app/verify-recaptcha`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      }
+    );
 
     const data = await response.json();
 
